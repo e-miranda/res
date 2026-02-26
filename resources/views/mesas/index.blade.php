@@ -31,7 +31,20 @@
                 <td class="p-3 flex gap-2">
                     <a href="{{ route('mesas.edit', $mesa) }}"
                        class="text-blue-600">Editar</a>
+                
+                    @if($mesa->estado === 'libre')
+                        <form method="POST" action="{{ route('pedidos.abrir', $mesa) }}">
+                            @csrf
+                            <button class="bg-green-600 text-white px-2 py-1 rounded">
+                                Abrir Pedido
+                            </button>
+                        </form>
+                    @else
+                        <span class="text-red-600">Ocupada</span>
+                    @endif
                 </td>
+
+
             </tr>
             @endforeach
         </tbody>

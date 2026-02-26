@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Categoria;
-use App\Models\Producto;
 
-class ProductoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $productos = Producto::with('categoria')->get();
-        return view('productos.index', compact('productos'));
+        //
     }
 
     /**
@@ -22,8 +19,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $categorias = Categoria::where('activa',1)->get();
-        return view('productos.create', compact('categorias'));
+        //
     }
 
     /**
@@ -32,18 +28,21 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
-            'costo' => 'required|numeric|min:0',
-            'activo' => 'required',
-            'precio_venta' => 'required|numeric|min:0',
-            'stock' => 'required|integer|min:0',
-            'categoria_id' => 'required|exists:categorias,id'
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:6',
+            'role'=>'required'
         ]);
 
-        Producto::create($request->all());
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password),
+            'role'=>$request->role
+        ]);
 
-        return redirect()->route('productos.index')
-            ->with('success','Producto creado');       
+        return redirect()->route('usuarios.index')
+            ->with('success','Usuario creado');
     }
 
     /**

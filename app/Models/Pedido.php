@@ -16,5 +16,19 @@ class Pedido extends Model
     {
         return $this->belongsTo(Mesa::class);
     }
+    public function detalles()
+    {
+        return $this->hasMany(PedidoDetalle::class);
+    }
+    public function recalcularTotal()
+    {
+        $this->update([
+            'total' => $this->detalles()->sum('subtotal')
+        ]);
+    }
+    public function getTieneProductosAttribute(){
+        return $this->detalles()->exists();
+    }
+    
 
 }

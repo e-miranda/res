@@ -1,0 +1,35 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#1594
+    [34mall[39m: [
+      [34;4mApp\Models\Producto[39;24m {#6557
+        [34mid[39m: [35m4[39m,
+        [34mcategoria_id[39m: [35m1[39m,
+        [34mnombre[39m: "[32mmedio[39m",
+        [34mprecio_venta[39m: "[32m25.00[39m",
+        [34mcosto[39m: "[32m15.00[39m",
+        [34mactivo[39m: [35m1[39m,
+        [34mcreated_at[39m: [36mnull[39m,
+        [34mupdated_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#6556
+        [34mid[39m: [35m5[39m,
+        [34mcategoria_id[39m: [35m1[39m,
+        [34mnombre[39m: "[32mcompleto[39m",
+        [34mprecio_venta[39m: "[32m35.00[39m",
+        [34mcosto[39m: "[32m25.00[39m",
+        [34mactivo[39m: [35m1[39m,
+        [34mcreated_at[39m: [36mnull[39m,
+        [34mupdated_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#6555
+        [34mid[39m: [35m6[39m,
+        [34mcategoria_id[39m: [35m1[39m,
+        [34mnombre[39m: "[32mcoca cola[39m",
+        [34mprecio_venta[39m: "[32m18.00[39m",
+        [34mcosto[39m: "[32m10.00[39m",
+        [34mactivo[39m: [35m1[39m,
+        [34mcreated_at[39m: [36mnull[39m,
+        [34mupdated_at[39m: [36mnull[39m,
+      },
+    ],
+  }
+

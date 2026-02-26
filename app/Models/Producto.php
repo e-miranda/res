@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Producto extends Model
 {
     protected $fillable = [
@@ -11,8 +12,13 @@ class Producto extends Model
         'nombre',
         'precio_venta',
         'costo',
-        'activo'
+        'activo',
+        'stock',
     ];
+    public function tieneStock($cantidad):bool
+    {
+        return $this->stock >= $cantidad;
+    }
 
     public function categoria()
     {
